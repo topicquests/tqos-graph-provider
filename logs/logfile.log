@@ -1,0 +1,5 @@
+2019-10-08 17:57:02 DEBUG LoggingPlatform:38 - BlueprintsPgEnvironment testgraph tq_graph
+2019-10-08 17:57:02 DEBUG LoggingPlatform:38 - PostgresConnectionFactory starting
+2019-10-08 18:00:11 DEBUG LoggingPlatform:38 - BlueprintsPgEnvironment testgraph tq_graph
+2019-10-08 18:00:11 DEBUG LoggingPlatform:38 - PostgresConnectionFactory starting
+2020-03-02 11:54:17 DEBUG LoggingPlatform:38 - PostgresConnectionFactory starting

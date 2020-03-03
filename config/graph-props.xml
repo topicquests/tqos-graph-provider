@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<properties>
+
+	<parameter name="GraphDatabaseName" value = "testgraph" />
+	<parameter name="GraphDatabaseSchema" value = "tq_graph" />
+
+</properties>
