@@ -132,6 +132,68 @@ public class SQLGraphNode implements IVertex, IEdge, IGraphNode {
 		return null;
 	}
 	
+	@Override
+	public void addIEdge(IEdge edge) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void addIVertex(IVertex vertex) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public IVertex getIVertex(String id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeIVertex(IVertex vertex) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Iterable<IVertex> getVertices() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<IVertex> getVertices(String key, Object value) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public IEdge getIEdge(String id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeIEdge(IEdge edge) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Iterable<IEdge> getIEdges() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<IEdge> getIEdges(String key, Object value) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 	/////////////////////////////////
 	// SQL Support
