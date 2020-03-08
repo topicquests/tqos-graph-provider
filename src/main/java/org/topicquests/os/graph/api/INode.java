@@ -34,13 +34,23 @@ public interface INode {
 	//////////////////////
 	// Text
 	//////////////////////
-	void setLabel(String label);
+	void setLabel(String label, String language);
 	
-	String getLabel();
+	/**
+	 * 
+	 * @param language can be {@code null}
+	 * @return
+	 */
+	String getLabel(String language);
 	
-	void addDescription(String description);
-		
-	List<String> listDescriptions();
+	void addDescription(String description, String language);
+	
+	/**
+	 * Returns all descriptions if {@code language} is {@code null}
+	 * @param language
+	 * @return
+	 */
+	List<String> listDescriptions(String language);
 
 	//////////////////////
 	// Properties

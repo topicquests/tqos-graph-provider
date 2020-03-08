@@ -61,25 +61,25 @@ public class SQLGraphNode implements IVertex, IEdge, IGraphNode {
 	}
 
 	@Override
-	public void setLabel(String label) {
+	public void setLabel(String label, String language) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public String getLabel() {
+	public String getLabel(String language) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void addDescription(String description) {
+	public void addDescription(String description, String language) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public List<String> listDescriptions() {
+	public List<String> listDescriptions(String language) {
 		// TODO Auto-generated method stub
 		return null;
 	}
