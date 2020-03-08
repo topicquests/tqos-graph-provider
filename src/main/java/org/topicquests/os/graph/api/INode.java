@@ -50,6 +50,12 @@ public interface INode {
 	
 	IResult addToSetProperty(String key, String value);
 	
+	/**
+	 * Returns an {@code Object} in the result. It's up to
+	 * caller to cast as needed
+	 * @param key
+	 * @return
+	 */
 	IResult getValue(String key);
 	
 	IResult removeProperty(String key);

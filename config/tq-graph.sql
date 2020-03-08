@@ -8,8 +8,7 @@ GRANT USAGE ON schema tq_graph TO tq_proxy_ro;
 
 CREATE TABLE IF NOT EXISTS 
 tq_graph.nodes (
-	id text NOT NULL PRIMARY KEY,
-	label text NOT NULL
+	id text NOT NULL PRIMARY KEY
 );
 
 GRANT ALL PRIVILEGES ON tq_graph.nodes TO tq_proxy;
@@ -18,8 +17,6 @@ GRANT SELECT ON tq_graph.nodes TO tq_proxy_ro;
 CREATE INDEX IF NOT EXISTS idx_node_ids
 	ON tq_graph.nodes (id);
 
-CREATE INDEX IF NOT EXISTS idx_vertex_labels
-	ON tq_graph.nodes (label);
 
 CREATE TABLE IF NOT EXISTS 
 tq_graph.lang_labels (
@@ -32,14 +29,15 @@ tq_graph.lang_labels (
 
 GRANT ALL PRIVILEGES ON tq_graph.lang_labels TO tq_proxy;
 GRANT SELECT ON tq_graph.lang_labels TO tq_proxy_ro;
+CREATE INDEX IF NOT EXISTS tsv_node_id_idx ON tq_graph.lang_labels (node_id);
 
--- CREATE INDEX IF NOT EXISTS tsv_lbels_idx ON tq_graph.lang_labels USING gin(label);
-CREATE INDEX IF NOT EXISTS tsv_labels_en_idx ON tq_graph.lang_labels USING gin(to_tsvector('english', label)) WHERE language = 'eng';
+CREATE INDEX IF NOT EXISTS tsv_label_idx ON tq_graph.lang_labels (left(label, 200));
+CREATE INDEX IF NOT EXISTS tsv_lang_idx ON tq_graph.lang_labels (language);
 
 CREATE TABLE IF NOT EXISTS 
 tq_graph.lang_descriptions (
 	node_id text NOT NULL,
-	description tsvector NOT NULL,
+	description text NOT NULL,
 	language varchar (3) NOT NULL,
 	CONSTRAINT fk_node_d FOREIGN KEY (node_id) REFERENCES tq_graph.nodes (id)
 		ON DELETE CASCADE
@@ -47,8 +45,10 @@ tq_graph.lang_descriptions (
 
 GRANT ALL PRIVILEGES ON tq_graph.lang_descriptions TO tq_proxy;
 GRANT SELECT ON tq_graph.lang_descriptions TO tq_proxy_ro;
+CREATE INDEX IF NOT EXISTS tsx_node_id_idx ON tq_graph.lang_descriptions (node_id);
 
-CREATE INDEX IF NOT EXISTS tsv_desc_en_idx ON tq_graph.lang_descriptions USING gin(to_tsvector('english', label)) WHERE language = 'eng';
+CREATE INDEX IF NOT EXISTS tsx_desc_idx ON tq_graph.lang_descriptions (left(description, 200);
+CREATE INDEX IF NOT EXISTS tsx_lang_idx ON tq_graph.lang_descriptions (language);
 
 CREATE TABLE IF NOT EXISTS 
 tq_graph.node_properties (
