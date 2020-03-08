@@ -16,6 +16,8 @@ import net.minidev.json.JSONObject;
  *  {@ IEdge} can be cast as an {@code IVertex} and vice versa.</p>
  */
 public interface INode {
+	public static final String
+		ID_KEY	= "id";
 
 	//////////////////////
 	// Utility Identity

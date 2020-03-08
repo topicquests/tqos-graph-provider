@@ -55,5 +55,11 @@ tq_graph.edges (
 			"INSERT INTO tq_graph.nodes ( id ) VALUES ( ? )";
 	
 	public static final String GET_NODE =
-			"SELECT * tq_graph.node_properties WHERE node_id=?"; //TODO there's more
+			"SELECT * tq_graph.node_properties WHERE node_id=?"; //TODO there's more BAD
+	
+	public static final String GET_PROPERTY =
+			"SELECT value FROM tq_graph.node_properties WHERE node_id=? AND key=?";
+	
+	public static final String INSERT_PROPERTY =
+			"INSERT INTO tq_graph.node_properties (node_id, key, value) VALUES ( ?, ?, ? )";
 }
