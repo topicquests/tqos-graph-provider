@@ -4,6 +4,7 @@
 package org.topicquests.os.graph;
 
 import org.topicquests.os.graph.api.IGraph;
+import org.topicquests.os.graph.api.IGraphModel;
 import org.topicquests.pg.PostgresConnectionFactory;
 import org.topicquests.support.RootEnvironment;
 
@@ -13,7 +14,7 @@ import org.topicquests.support.RootEnvironment;
  */
 public class GraphEnvironment extends RootEnvironment {
 	private PostgresConnectionFactory provider;
-	private IGraph theGraph;
+	private IGraphModel model;
 
 	/**
 	 */
@@ -22,15 +23,15 @@ public class GraphEnvironment extends RootEnvironment {
 		String dbName = getStringProperty("GraphDatabaseName");
 		String schemaName = getStringProperty("GraphDatabaseSchema");
 		provider = new PostgresConnectionFactory(dbName, schemaName);
-		theGraph = new SQLGraph(this);
+		model = new SQLGraphModel(this);
 	}
 
 	public PostgresConnectionFactory getProvider() {
 		return provider;
 	}
 	
-	public IGraph getGraph() {
-		return theGraph;
+	public IGraphModel getGraphModel() {
+		return model;
 	}
 	
 	@Override

@@ -52,4 +52,9 @@
             </plugin>
         </plugins>
     </build>
+    <url>https://github.com/topicquests/tqos-graph-provider</url>
+    <organization>
+    	<name>TopicQuests Foundation</name>
+    	<url>http://www.topicquests.org/</url>
+    </organization>
 </project>

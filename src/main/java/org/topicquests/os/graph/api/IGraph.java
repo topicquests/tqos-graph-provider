@@ -166,6 +166,14 @@ public interface IGraph {
 
     INode getNode(IPostgresConnection conn, String id, IResult r);
     
+    /**
+     * Locate graph nodes in this graph by full text search
+     * @param labelText
+     * @param descriptionText
+     * @return
+     */
+    IResult fullTextSearch(String labelText, String descriptionText);
+    
     ////////////////////
     // Custom Queries
     // Allows this database to gain extended capabilities

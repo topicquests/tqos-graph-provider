@@ -143,4 +143,10 @@ public class SQLGraph implements IGraph {
 		
 	}
 
+	@Override
+	public IResult fullTextSearch(String labelText, String descriptionText) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
